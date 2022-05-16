@@ -110,5 +110,23 @@
             android:background="#319A9A9A"
             app:layout_constraintStart_toStartOf="@+id/editUserName"
             app:layout_constraintEnd_toEndOf="@+id/editUserName"
-            app:layout_constraintTop_toBottomOf="@+id/editUserName" android:layout_marginTop="16dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/editUserName"
+            android:layout_marginTop="16dp"/>
+    <TextView
+            android:text="Sign In:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/SignIn"
+            android:textColor="#000000"
+            app:layout_constraintTop_toBottomOf="@+id/editEmail"
+            app:layout_constraintStart_toStartOf="@+id/editEmail"
+            android:layout_marginTop="16dp"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/error"
+            app:layout_constraintTop_toBottomOf="@+id/SignUpbtn"
+            app:layout_constraintEnd_toEndOf="@+id/editEmail"
+            app:layout_constraintStart_toStartOf="@+id/editEmail"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

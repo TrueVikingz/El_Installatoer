@@ -10,6 +10,15 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.ElectricControl">
         <activity
+                android:name=".HomeScreen"
+                android:exported="true"/>
+        <activity
+                android:name=".Registration"
+                android:exported="true"/>
+        <activity
+                android:name=".Registrations"
+                android:exported="true"/>
+        <activity
                 android:name=".MainActivity"
                 android:exported="true">
             <intent-filter>

@@ -15,22 +15,43 @@ public class MainActivity extends AppCompatActivity {
     EditText Password;
     Button Login;
     Button Registration;
+    TextView Forgot_Password;
+    DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_login);
+        setContentView(R.layout.activity_main);
 
         Username = (EditText) findViewById(R.id.editLoginUser);
         Password = (EditText) findViewById(R.id.editLoginPass);
+        Forgot_Password = (TextView) findViewById(R.id.forgotpass);
         Login = (Button) findViewById(R.id.Loginbtn);
+        Login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String username=Username.getText().toString().trim();
+                String password=Password.getText().toString().trim();
+                Boolean res= db.checkUser(username,password);
+
+                if (res = true){
+                    Intent login = new Intent(MainActivity.this, HomeScreen.class);
+                    startActivity(login);
+                }
+                else {
+                    Error = (TextView) findViewById(R.id.error);
+                    Error.setText("invalid Username and Password");
+
+                }
+            }
+        });
+
         Registration = (Button) findViewById(R.id.registerbtn);
         Registration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openRegistrationActivity();
             }
-
         });
     }
 
